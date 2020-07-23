@@ -27,15 +27,15 @@ class MaterialPoint {
         this.radius = 10;
         this.color = color(0, 0, 0);
     }
-
-    
-
 }
 
 
 class World {
-    constructor(Lx, Ly) {
-        this.wsize = createVector(Lx, Ly);
-        
+    constructor(Lx, Ly, vx, vy) {
+        this.world_size = createVector(Lx, Ly);
+        this.visible_size = createVector(vx, vy);
+        this.particles = [];
+        this.t = 0;
+        this.dt = 0.01;
     }
 }
