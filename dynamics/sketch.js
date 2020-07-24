@@ -1,25 +1,18 @@
-let start;
-let xoff;
-let inc;
+let pg;
 
 function setup() {
   createCanvas(800, 600, 'P2D');
-  start = 0;
-  inc = 0.005;
+  background(51);
+  pg = createGraphics(100, 100, 'P2D')
 }
 
 function draw() {
-  background(51);
-  stroke(255);
-  noFill();
-  xoff = start;
-  beginShape();
-    for (var x=0; x<width; x++){
-      let y = map(noise(xoff), 0, 1, -height/4, height/4);
-      vertex(x, height/2+y);
-      xoff += inc;
-    }    
-  endShape();
-  start += inc;
+  stroke(10);
+  rect(10, 20, 30, 40);
+  pg.background(200);
+  pg.fill(50);
+  pg.noStroke();
+  pg.ellipse(50, 50, 10, 10)
+  image(pg, 20, 30, 100, 100);
 }
 

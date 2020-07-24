@@ -31,11 +31,17 @@ class MaterialPoint {
 
 
 class World {
-    constructor(Lx, Ly, vx, vy) {
-        this.world_size = createVector(Lx, Ly);
-        this.visible_size = createVector(vx, vy);
+    constructor(Lx, Ly) {
+        this.world_size = createVector(Lx, Ly);        
         this.particles = [];
         this.t = 0;
         this.dt = 0.01;
+        this.origin = new MaterialPoint(m=0, x=this.world_size.x/2, y=this.world_size.y, type=1);
+        this.particles.push(this.origin);
+        this.gravity = 6.67408e-11;
+        this.isGravityOn = false;
+        this.canvas = createGraphics(this.world_size.x, this.world_size.y, 'P2D');
     }
+
+
 }
